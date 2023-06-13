@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --primary: #292c3e;
+  --primary-dark: #2c1674;
+  --primary-light: #bcabf6;
+  --secondary: #52597d;
+  --secondary-light: #e0e2eb;
+  --light-gray: #f0f1f5;
+  --light-white: #f7f7ff;
+  --white: #ffffff;
+  --indigo: #3d1fa2;
+}
