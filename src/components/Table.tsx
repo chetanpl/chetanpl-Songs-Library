@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { actionCreators, useAppDispatch, useAppSelector } from "../state";
 import styled, { keyframes, css } from 'styled-components';
 import Header from "./Header";
@@ -98,19 +98,26 @@ thead th{
     z-index:10;
 }
 `
+const Error=styled.div`
+    border:1px solid red;
+    color:red;
+     width:700px;
+`
 
 export const Table: React.FC = () => {
     const [searchableWord, setsearchableWord] = useState<string>('');
     const [country, setCountry] = useState<string>('');
     const [limit, setLimit] = useState<number>(10);
+    const [isError, setIsError] = useState<boolean>(true);
 
     const dispatch = useAppDispatch();
     const { data, error, loading } = useAppSelector(state => state.reducers.repositories);
     const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        if(searchableWord && searchableWord.length >= 1 ){
         setLimit(10);
         event.preventDefault();
         dispatch(actionCreators.searchRepositories(searchableWord, limit, country));
-
+        }
     }
     const handleScroll = (e: React.UIEvent<HTMLDivElement, UIEvent>) => {
         const element = document.getElementById('scro') as HTMLElement;
@@ -128,13 +135,22 @@ export const Table: React.FC = () => {
             }
         }
     };
-    console.log('Error is: ', error);
+    useEffect(()=>{
+        if(searchableWord===''|| searchableWord.length<=1){
+            setIsError(true)
+        }
+        else{
+            setIsError(false);
+        }
+    },[searchableWord])
+    console.log(searchableWord);
     return <div>
         <form onSubmit={onSubmit}>
             <Header word={searchableWord} setWord={setsearchableWord} countryName={country} setCountryName={setCountry}></Header>
         </form>
         <Container>
             <Heading>Media Library</Heading>
+            {isError===true && <Error> Please enter minimum 2 character of name</Error>}
             <Main>
                 {loading ? (
                     <>
