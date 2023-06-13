@@ -21,7 +21,6 @@ To start this application use 'npm start'
 
 After clicking on submit button, by default the first 10 records get render over the grid. Once user start to scroll the page and the scroll reach to the botton of the grid, the next 10 records get start render over the grid. Now grid has 20 records on page. 
 
-<img width="1728" alt="image" src="https://github.com/chetanpl/chetanpl-Songs-Library/assets/16497813/4924f1fa-8b1e-4623-a501-c61e69832b3e">
 
 If customer looking for some special songs with specific location. User can enter their search query using two input fields. 
 1. **Searching name **: Searching name has validation. It's required minimum 2 characters of input, Otherwise it start to show error.
@@ -32,5 +31,13 @@ For example
 <img width="1728" alt="image" src="https://github.com/chetanpl/chetanpl-Songs-Library/assets/16497813/98ca50d4-5a50-41ff-bdbe-94467af37cd5">
 If user enter a valid name, the result comes according to the search value. 
 <img width="1726" alt="image" src="https://github.com/chetanpl/chetanpl-Songs-Library/assets/16497813/cccc5444-06ba-451b-9b21-19c5f4e2fd47">
+
+After clicking on submit button, by default the first 10 records get render over the grid. Once user start to scroll the page and the scroll reach to the botton of the grid, the next 10 records get start render over the grid. Now grid has 20 records on page. 
+<img width="1728" alt="image" src="https://github.com/chetanpl/chetanpl-Songs-Library/assets/16497813/eb063f9d-360d-484e-8db3-b1a27a87e1a7">
+
+I have implimented shimmer effect. For an instance below. 
+<img width="1728" alt="image" src="https://github.com/chetanpl/chetanpl-Songs-Library/assets/16497813/2003ed7b-d1ec-4f27-9cf7-e683c84ff2c0">
+
+
 
 
